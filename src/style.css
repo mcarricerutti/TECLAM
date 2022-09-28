@@ -1,0 +1,24 @@
+:root {
+  /*fonts*/
+  --mulish-font: 'Mulish', sans-serif;
+}
+  
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  html,
+  body {
+    font-family: var(--mulish-font);
+  }
+
+  .contBody{
+    width: 100%;
+    height: 200vh;
+    background-position: 67%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url("C:\Users\Usuario\Desktop\teclam\public\fondoTeclam.jpg");
+  }

@@ -1,0 +1,36 @@
+.header {
+    position: absolute;
+    width: 100%;
+}
+
+.letrasNav{
+    color: white;
+}
+
+.nav-item .nav-link{
+    color: white;
+    font-size: 20px;
+}
+
+.nav-item .nav-link:hover{
+    color: white;
+    font-size: 22px;
+}
+
+.nav-item .nav-link:visited{
+    color: white;
+    font-size: 22px;
+}
+
+.logo-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 55%;
+}
+
+.logo-container img{
+    width: 60%;
+    height: 60%;
+    margin-left: 50%;
+}
