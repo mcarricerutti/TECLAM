@@ -23,14 +23,10 @@
 }
 
 .logo-container{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-left: 55%;
+    margin-right: 25%;
 }
 
 .logo-container img{
     width: 60%;
     height: 60%;
-    margin-left: 50%;
 }
