@@ -16,9 +16,210 @@
 
   .contBody{
     width: 100%;
-    height: 200vh;
+    height: 230vh;
     background-position: 67%;
     background-size: cover;
     background-repeat: no-repeat;
     background-image: url("C:\Users\Usuario\Desktop\teclam\public\fondoTeclam.jpg");
   }
+
+/*NAVBAR*/
+.header {
+  position: absolute;
+  width: 100%;
+}
+.letrasNav{
+  color: white;
+}
+.nav-item .nav-link{
+  color: white;
+  font-size: 20px;
+}
+.nav-item .nav-link:hover{
+  color: white;
+  font-size: 22px;
+}
+.nav-item .nav-link:visited{
+  color: white;
+  font-size: 22px;
+}
+
+.logo-container{
+  margin-right: 40%;
+}
+
+.logo-container img{
+  width: 60%;
+  height: 60%;
+  margin-left: 50%;
+}
+
+/*CARDWIDGET*/
+.cart-widget {
+  text-align:end; 
+  margin-right: 8%;
+}
+
+.qty-display {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  background-color: white;
+  border-radius: 50%;
+  font-size: 12px;
+  position: absolute;
+  text-align: center;
+  line-height: 17px;
+  margin-left: 3%;
+}
+
+.cart-widget:hover{
+font-size: 18px;
+}
+
+/*ITEM LIST CONTAINER*/
+.contenedorItemList {
+  display: grid;
+  grid-template: 1fr 2fr 1fr / 0.5fr 2fr 0.5fr;
+  height: 100%;
+}
+
+.contenedorTextos {
+  grid-column: 2;
+  grid-row: 2;
+  color: white;
+  text-align: center;
+  align-self: center;
+  margin-top: 20%;
+  margin-top: 10%;
+}
+
+.contenedorTextos h1{
+  font-weight: 700;
+}
+
+.contenedorTextos p {
+  font-size: 1.1rem;
+  font-weight: 300;
+  margin: 30px auto;
+  max-width: 360px;
+}
+
+
+.comprar {
+  background-color: yellow;
+  padding: 3%;
+  font-size: 18px;
+  border-radius: 50%;
+  border: none;
+}
+
+.comprar:hover {
+  font-size: 20px;
+}
+
+/*ITEM*/
+.card{
+  display: inline-block;
+  text-align: center;
+  align-items: center;
+  margin-left: 3%;
+  width: 30%;
+  background-color: rgba(255, 255, 0, 0.363);
+}
+
+.imgProductos{
+  width: 50%;
+  margin-top: 3%;
+  margin-bottom: 3%;
+}
+
+.btnDetalle{
+  padding: 2%;
+  width: 50%;
+  background-color: rgb(99, 99, 167);
+  color: white;
+  border: none;
+  margin-bottom: 3%;
+}
+
+.prodName{
+  color: white;
+  font-size: 25px;
+}
+
+.prodPrice{
+  color: white;
+  font-size: 18px;
+}
+
+/*DETAILS - CONTADOR*/
+.contDetail{
+  width: 80%;
+  padding: 2%;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  background-color: rgba(255, 255, 0, 0.363);
+}
+
+.imgDetail{
+  width: 85%;
+  align-content: center;
+  justify-content: center;
+}
+
+.titleDetail{
+  font-size: 25px;
+  color: white;
+}
+
+
+.btnContador{
+  background-color: white;
+  border: none;
+  color: black;
+}
+
+.btnContador:hover{
+  background-color: white;
+  border: none;
+  color: black;
+}
+
+.contSimbolos{
+  background-color: white;
+  text-align: center;
+  border: 1px solid black;
+  padding: 2%;
+}
+
+.contSuma{
+  border-left: 1px solid black;
+  padding: 7%;
+}
+
+.contSuma:hover{
+  border-left: 1px solid black;
+  padding: 7%;
+  font-size: 18px;
+}
+
+.contResta{
+  border-right: 1px solid black;
+  padding: 7%;
+}
+
+.contResta:hover{
+  border-right: 1px solid black;
+  padding: 7%;
+  font-size: 18px;
+}
+
+.btnAggCarrito{
+  color: black;
+  background-color: yellow;
+  padding: 3%;
+  width: 80%;
+  border: none;
+}
+

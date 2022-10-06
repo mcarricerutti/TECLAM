@@ -1,6 +1,5 @@
 import React from "react";
-import CartWidget from "./CardWidget";
-import "./styles/NavBar.css";
+import CartWidget from "../CardWidget/CardWidget";
 
 const NavBar = ({ background }) => {
 
@@ -24,13 +23,13 @@ const NavBar = ({ background }) => {
                         <div className="collapse navbar-collapse" id="navbarNavDropdown">
                             <ul className="navbar-nav ">
                                 <li className="nav-item">
-                                    <a className="nav-link" href="#">Inicio</a>
+                                    <a className="nav-link" href="//">Inicio</a>
                                 </li>
                                 <li className="nav-item">
-                                    <a className="nav-link" href="#">Contacto</a>
+                                    <a className="nav-link" href="//">Contacto</a>
                                 </li>
                                 <li className="nav-item">
-                                    <a className="nav-link" href="#">Productos</a>
+                                    <a className="nav-link" href="//">Productos</a>
                                 </li>
                             </ul>
                         </div>
