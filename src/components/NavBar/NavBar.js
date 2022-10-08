@@ -1,5 +1,7 @@
 import React from "react";
 import CartWidget from "../CardWidget/CardWidget";
+import {Link, NavLink} from "react-router-dom";
+
 
 const NavBar = ({ background }) => {
 
@@ -10,42 +12,35 @@ const NavBar = ({ background }) => {
     return (
     <header className={`header background--${background}`}>
 
-        
-        <div className='container'>
-            <div className='row'>
-
-                    <nav className="navbar navbar-expand">
-                        <button className="navbar-toggler" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown"aria-expanded="false"
-                            aria-label="Toggle navigation">
-                            <span className="navbar-toggler-icon"></span>
-                        </button>
-                        <div className="collapse navbar-collapse" id="navbarNavDropdown">
-                            <ul className="navbar-nav ">
-                                <li className="nav-item">
-                                    <a className="nav-link" href="//">Inicio</a>
-                                </li>
-                                <li className="nav-item">
-                                    <a className="nav-link" href="//">Contacto</a>
-                                </li>
-                                <li className="nav-item">
-                                    <a className="nav-link" href="//">Productos</a>
-                                </li>
-                            </ul>
-                        </div>
-
-                        <div className="logo-container">
-                            <img src={brand} alt="logo" />
-                        </div>
-
-                        <div className=''>
-                            {/* cart widget */}
-                            <CartWidget />
-                        </div>
-
-                    </nav>
+        <nav className="nav">
+            <div className="container">
+                <div className="row">
+                    <div className="col-lg-4">
+                        <Link to="/">
+                            <img src={brand} className="logo" alt="logo" />
+                        </Link>
+                    </div>
+                    <div className="col-lg-6">
+                        <ul>
+                            <NavLink to="/products/teclados">Keyboards</NavLink>
+                            <NavLink to="/products/esqueletoTeclado">Keyboard Kits</NavLink>
+                            <NavLink to="/products/teclas">Keycaps</NavLink>
+                        </ul>
+                    </div>
+                    <div className="col-lg-2">
+                        <Link to="/cart">
+                            <div className="contLogoCarrito">
+                                <CartWidget />
+                            </div>
+                        </Link>
+                    </div>
+                </div>
             </div>
-        </div>
+                
+        </nav>
+                       
+
+
     </header>
     );
     };
