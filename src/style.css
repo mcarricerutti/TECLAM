@@ -267,3 +267,9 @@ font-size: 18px;
   width: 60%;
   text-align: center;
 }
+
+.loading{
+  text-align: center;
+  color: white;
+  padding-top: 25%;
+}

@@ -5,6 +5,8 @@ import { products } from '../mock/productsMock';
 
 const ItemDetailContainer = () => {
     const [item, setItem] = useState({});
+    const [loading, setLoading] = useState(true);
+
 
     const {id} = useParams();
 
@@ -15,7 +17,7 @@ const ItemDetailContainer = () => {
 
                 setTimeout(() => {
                     res(producto);
-                }, 500);
+                }, 2000);
             });
         };
         traerProducto()
@@ -24,8 +26,17 @@ const ItemDetailContainer = () => {
             })
             .catch((error) => {
                 console.log(error);
-            });
+            })
+            .finally(() =>{
+                setLoading(false)
+            })
     }, [id]);
+
+
+    if(loading){
+        return <h1 className="loading">Loading...</h1>
+    }
+
 
     return (
         <div className="item-list-container">

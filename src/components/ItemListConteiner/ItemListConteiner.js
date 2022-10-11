@@ -7,6 +7,7 @@ import { useParams } from "react-router-dom";
 
 const ItemListContainer = () => {
   const [data, setData] = useState([]);
+  const [loading, setLoading] = useState(true);
 
     const {prodName} = useParams();
 
@@ -17,7 +18,7 @@ const ItemListContainer = () => {
                 const prods = prodName ? prodFiltrados : products;
                 setTimeout(() => {
                     res(prods);
-                }, 1000);
+                }, 2000);
             });
         };
         traerTeclados()
@@ -26,8 +27,16 @@ const ItemListContainer = () => {
         })
         .catch((error) => {
             console.log(error);
-        });
+        })
+        .finally(() =>{
+            setLoading(false)
+        })
     }, [prodName]);
+
+
+    if(loading){
+        return <h1 className="loading">Loading...</h1>
+    }
 
 
     return (
