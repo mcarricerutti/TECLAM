@@ -6,12 +6,15 @@ import "./style.css";
 import {BrowserRouter, Routes, Route} from "react-router-dom";
 import Cart from "./components/Cart/Cart";
 import Home from "./components/Home/Home";
-// import Footer from "./components/Footer/Footer";
+import PageNotFound from "./components/PageNotFound/PageNotFound";
+import Provider from "./context/CartContext";
 
 
 
 function App() {
   return (
+    <Provider>
+      
     <BrowserRouter>
     <div className="contBody">
       <NavBar background={'transparent'} />
@@ -22,11 +25,14 @@ function App() {
         <Route path="/products/:prodName" element={<ItemListContainer/>}/>
         <Route path="/item/:id" element={<ItemDetailContainer />}/>
         <Route path="/cart" element={<Cart/>}/>
-
+        <Route path="*" element={<PageNotFound/>} />
+        
       </Routes>
-      {/* <Footer/> */}
+
     </div>
     </BrowserRouter>
+
+    </Provider>
   );
 }
 

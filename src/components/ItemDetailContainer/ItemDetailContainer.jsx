@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import ItemDetail from '../ItemDetail/ItemDetail';
 import { products } from '../mock/productsMock';
+import { DotSpinner } from '@uiball/loaders'
+
 
 const ItemDetailContainer = () => {
     const [item, setItem] = useState({});
@@ -34,7 +36,11 @@ const ItemDetailContainer = () => {
 
 
     if(loading){
-        return <h1 className="loading">Loading...</h1>
+        return (
+            <div className="spinner"> 
+                <DotSpinner />
+            </div>
+        )
     }
 
 

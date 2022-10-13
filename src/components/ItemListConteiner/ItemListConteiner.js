@@ -3,6 +3,7 @@ import ItemList from "../ItemList/ItemList";
 import { products } from "../mock/productsMock";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useParams } from "react-router-dom";
+import { DotSpinner } from '@uiball/loaders'
 
 
 const ItemListContainer = () => {
@@ -35,7 +36,11 @@ const ItemListContainer = () => {
 
 
     if(loading){
-        return <h1 className="loading">Loading...</h1>
+        return (
+            <div className="spinner"> 
+                <DotSpinner />
+            </div>
+        )
     }
 
 

@@ -1,6 +1,19 @@
+import { useContext, useState } from "react";
+import { CartContext } from "../../context/CartContext";
 import ItemCount from "../ItemCount/ItemCount";
+import { Link } from "react-router-dom";
 
 const ItemDetail = ({ item }) => {
+    const [unidades, setUnidades] = useState(0);
+
+    const {addToCart} = useContext(CartContext);
+
+    const aggUnidades = (numero) =>{
+        // console.log(`Añadiste ${numero}`)
+        setUnidades(numero);
+        addToCart(item,numero);
+    };
+
     return (
         <div className="container contDetail">
             <div className="row">
@@ -11,7 +24,15 @@ const ItemDetail = ({ item }) => {
                 <div className="col-lg-7">
                 <h2 className="titleDetail">{item.title}</h2>
                 <p>{item.description}</p>
-                <ItemCount stock={item.stock}/>
+                <p>US ${item.precio}</p>
+
+                {
+                    unidades === 0 
+                    ? <ItemCount aggUnidades={aggUnidades} stock={item.stock}/>
+                    :<Link to="/cart" className="btnIrCarrito" >Ir al carrito</Link>
+                }
+                
+
                 </div>
             </div>
         </div>

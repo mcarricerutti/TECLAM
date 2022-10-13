@@ -1,8 +1,8 @@
+import CartDetail from "../CartDetail/CartDetail";
+
 const Cart = () => {
     return(
-        <div>
-            <p className="textCarrito">Bienvenido a tu carrito ()</p>
-        </div>
+        <CartDetail/>
     )
 }
 
