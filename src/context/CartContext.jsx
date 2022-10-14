@@ -7,25 +7,32 @@ const Provider = (props) => {
     const [cart, setCart] = useState([])
 
     const addToCart = (item, cantidad) =>{
-
-     const producto = {...item, cantidad};
-        if(isInCart(producto.id)){
-            //sumo la cantidad
-        }else{
-            setCart([...cart,producto]);
-        }
-    };
-
-    const isInCart = (id) => cart.some((prod) => prod.id === id);
+    let newCart;
+    let product = cart.find(product => product.id === item.id);
+     if(product){
+        product.cantidad += cantidad;
+        newCart = [...cart];
+     }else{
+        product = {...item, cantidad};
+        newCart = [...cart, product];
+     }
+     setCart(newCart)
+    }
 
     const deleteAll = () => setCart([]);
 
-    //const borrar un solo producto
-    //const sumar cantidad total de unidades
-    //sumar precio total
+    const deleteItem = (id) => setCart(cart.filter(product => product.id !== id));
+
+    const totalPrice = () => {
+        return cart.reduce((acumulador, preActual) => acumulador + preActual.cantidad * preActual.precio, 0);
+    };
+
+    const totalProducts = () => {
+        return cart.reduce((acumulador, actual) => acumulador + actual.cantidad, 0)
+    }
 
     return(
-        <CartContext.Provider value={{cart, addToCart, deleteAll}}>
+        <CartContext.Provider value={{cart, addToCart, deleteAll, deleteItem, totalPrice, totalProducts}}>
             {props.children}
         </CartContext.Provider>
     )

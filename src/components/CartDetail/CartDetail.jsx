@@ -2,7 +2,7 @@ import { useContext } from 'react';
 import { CartContext } from '../../context/CartContext';
 
 const CartDetail = () => {
-    const { cart, deleteAll } = useContext(CartContext);
+    const { cart, deleteAll, deleteItem, totalPrice} = useContext(CartContext);
 
     return (
         <div className='containerGeneCarrito'>
@@ -15,10 +15,10 @@ const CartDetail = () => {
                         <h3 className='textCarrito'>Cantidad: {prod.cantidad}</h3>
                         <h3 className='textCarrito'>Subtotal: US ${prod.precio * prod.cantidad}</h3>
                     </div>
-                    <button className='btnEliminarProd'>🗑</button>
+                    <button onClick={() => deleteItem(prod.id)} className='btnEliminarProd'>🗑</button>
                 </div>
             ))}
-            <h2 className='totalCarrito'>Total: US $</h2>
+            <h2 className='totalCarrito'>Total: US ${totalPrice()}</h2>
             <button className='btnEliminarTodoCarri' onClick={deleteAll}>Eliminar todo el carrito</button>
         </div>
     );

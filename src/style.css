@@ -322,6 +322,33 @@ font-size: 18px;
   margin-top: 2%;
 }
 
+.textCarriVacio{
+  text-align: center;
+  font-size: 18px;
+  color: rgb(167, 166, 166);
+  background-color: white;
+  position: absolute;
+  margin-top: 25%;
+  width: 70%;
+  margin-left: 12%;
+}
+
+.btnIrComrprar{
+  position: absolute;
+  margin-top: 28%;
+  margin-left: 30%;
+  background-color: yellow;
+  color: black;
+  padding: 8px;
+  width: 30%;
+  text-align: center;
+}
+
+.btnIrComrprar:hover{
+  color: black;
+  font-size: 17px;
+}
+
 /*SPINNER*/
 
 .spinner{
