@@ -16,12 +16,6 @@ const ItemCount = (props) => {
     }
     }
 
-    // const handleOnAdd = () => {
-    //   if(props.stock !== 0){
-    //     console.log("Productos agregados: " + (counter) );
-    //   }
-    // }
-
   
     return (
         <div className='container cardContador'>
@@ -43,7 +37,6 @@ const ItemCount = (props) => {
             </div>
             <div className="col-lg-6">
               <button onClick={() => props.aggUnidades(counter)}
-              /* onClick={handleOnAdd} */
               className="btnAggCarrito">Agregar al carrito</button>
             </div>
           </div>

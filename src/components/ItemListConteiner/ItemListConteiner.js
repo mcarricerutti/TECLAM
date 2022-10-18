@@ -32,13 +32,16 @@ const ItemListContainer = () => {
         .finally(() =>{
             setLoading(false)
         })
+
+        return() => setLoading(true);
+
     }, [prodName]);
 
 
     if(loading){
         return (
             <div className="spinner"> 
-                <DotSpinner />
+                <DotSpinner color='yellow' />
             </div>
         )
     }

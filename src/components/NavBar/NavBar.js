@@ -25,7 +25,7 @@ const NavBar = ({ background }) => {
                 <div className="col-lg-6">
                     <ul>
                         <NavLink to="/">Home</NavLink>
-                        <NavLink >
+                        <NavLink>
                         <NavDropdownMenu title="Productos">
                             <DropdownSubmenu>
                                 <NavLink className="nameProd" to="/products/teclados">Keyboards</NavLink>
@@ -38,7 +38,7 @@ const NavBar = ({ background }) => {
                             </DropdownSubmenu>
                         </NavDropdownMenu>
                         </NavLink>
-                        <NavLink to="" >Contacto</NavLink>
+                        <NavLink to="">Contacto</NavLink>
                     </ul>
                 </div>
 

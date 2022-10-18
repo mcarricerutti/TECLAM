@@ -95,13 +95,13 @@ ul a:hover {
   display: inline-block;
   width: 18px;
   height: 18px;
-  background-color: white;
+  color: white;
   border-radius: 50%;
-  font-size: 12px;
+  font-size: 20px;
   position: absolute;
   text-align: center;
   line-height: 17px;
-  margin-left: 3%;
+  margin-left: 2.5%;
 }
 
 .cart-widget:hover{

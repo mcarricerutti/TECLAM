@@ -8,10 +8,9 @@ import { CartContext } from '../../context/CartContext';
 const CartWidget = () => {
   const {totalProducts} = useContext(CartContext);
 
-
     return (
       <div className="cart-widget">
-        <span className="qty-display">{totalProducts() || 0 }</span>
+        <span className="qty-display">{totalProducts()}</span>
         <FontAwesomeIcon icon={faKeyboard} size="2x" color="white" />
       </div>
     );
