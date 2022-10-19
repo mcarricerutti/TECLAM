@@ -8,7 +8,7 @@ import { DotSpinner } from '@uiball/loaders'
 
 const ItemListContainer = () => {
   const [data, setData] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
 
     const {prodName} = useParams();
 

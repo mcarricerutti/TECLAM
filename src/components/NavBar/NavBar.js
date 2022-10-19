@@ -1,15 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
 import CartWidget from "../CardWidget/CardWidget";
 import {Link, NavLink} from "react-router-dom";
-import { DropdownSubmenu, NavDropdownMenu} from "react-bootstrap-submenu";
+import "bootstrap/dist/css/bootstrap.min.css";
+import { Dropdown, DropdownItem, DropdownMenu, DropdownToggle } from "reactstrap";
 
 
 const NavBar = ({ background }) => {
 
-    //Declaro una variable donde voy a almacenar la ruta de la imagen que quiero mostrar
     const brand = ("logo.png");
+
+    const [dropdown, setDropdown] = useState(false);
+
+    const abrirCerrarDropdown =() => {
+        setDropdown(!dropdown);
+    }
     
-    //la lógica antes del return
     return (
     <header className={`header background--${background}`}>
 
@@ -17,37 +22,47 @@ const NavBar = ({ background }) => {
         <div className="container">
             <div className="row">
                 <div className="col-lg-4">
-                    <Link to="/">
+                    <Link to="/home">
                         <img src={brand} className="logo" alt="logo" />
                     </Link>
                 </div>
 
                 <div className="col-lg-6">
                     <ul>
-                        <NavLink to="/">Home</NavLink>
-                        <NavLink>
-                        <NavDropdownMenu title="Productos">
-                            <DropdownSubmenu>
-                                <NavLink className="nameProd" to="/products/teclados">Keyboards</NavLink>
-                            </DropdownSubmenu>
-                            <DropdownSubmenu>
-                                <NavLink className="nameProd" to="/products/esqueletoTeclado">Keyboard Kits</NavLink>
-                            </DropdownSubmenu>
-                            <DropdownSubmenu>
-                                <NavLink className="nameProd" to="/products/teclas">Keycaps</NavLink>
-                            </DropdownSubmenu>
-                        </NavDropdownMenu>
+                        <NavLink to="/home">Home</NavLink>
+                        <NavLink to="/products">
+                            <Dropdown isOpen={dropdown} toggle={abrirCerrarDropdown}>
+                                <DropdownToggle caret>Productos</DropdownToggle>
+                                    <DropdownMenu>
+                                        <DropdownItem>
+                                        <NavLink className="nameProd" to="/products/teclados">Keyboards</NavLink>
+                                        </DropdownItem>
+
+                                        <DropdownItem divider/>
+
+                                        <DropdownItem>
+                                        <NavLink className="nameProd" to="/products/esqueletoTeclado">Keyboard Kits
+                                        </NavLink>
+                                        </DropdownItem>
+
+                                        <DropdownItem divider/>
+
+                                        <DropdownItem>
+                                        <NavLink className="nameProd" to="/products/teclas">Keycaps</NavLink>
+                                        </DropdownItem>
+                                    </DropdownMenu>
+                            </Dropdown>
                         </NavLink>
-                        <NavLink to="">Contacto</NavLink>
+                        <NavLink to="/contacto">Contacto</NavLink>
                     </ul>
                 </div>
 
                 <div className="col-lg-2">
-                    <Link to="/cart">
+                    <NavLink to="/cart">
                         <div className="contLogoCarrito">
                             <CartWidget />
                         </div>
-                    </Link>
+                    </NavLink>
                 </div>
 
             </div>

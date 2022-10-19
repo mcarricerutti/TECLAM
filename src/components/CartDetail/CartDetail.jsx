@@ -1,5 +1,6 @@
 import { useContext } from 'react';
 import { CartContext } from '../../context/CartContext';
+import { Link } from 'react-router-dom';
 
 const CartDetail = () => {
     const { cart, deleteAll, deleteItem, totalPrice} = useContext(CartContext);
@@ -20,6 +21,7 @@ const CartDetail = () => {
             ))}
             <h2 className='totalCarrito'>Total: US ${totalPrice()}</h2>
             <button className='btnEliminarTodoCarri' onClick={deleteAll}>Eliminar todo el carrito</button>
+            <Link to="/form" className='btnPagar'> Pagar </Link>
         </div>
     );
 };

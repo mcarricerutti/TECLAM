@@ -8,6 +8,8 @@ import Cart from "./components/Cart/Cart";
 import Home from "./components/Home/Home";
 import PageNotFound from "./components/PageNotFound/PageNotFound";
 import Provider from "./context/CartContext";
+import Form from "./components/Formulario/Formu";
+import Contacto from "./components/PageContacto/Contacto";
 
 
 
@@ -21,10 +23,13 @@ function App() {
       <Routes>
 
         <Route path="/" element={< Home title="Reyes del infra🌎" />}/>
+        <Route path="/home" element={< Home title="Reyes del infra🌎" />}/>
         <Route path="/products" element={<ItemListContainer/>}/>
         <Route path="/products/:prodName" element={<ItemListContainer/>}/>
         <Route path="/item/:id" element={<ItemDetailContainer />}/>
         <Route path="/cart" element={<Cart/>}/>
+        <Route path="/form" element={<Form/>}/>
+        <Route path="/contacto" element={<Contacto/>}/>
         <Route path="*" element={<PageNotFound/>} />
         
       </Routes>
