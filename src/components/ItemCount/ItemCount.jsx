@@ -1,12 +1,12 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
-const ItemCount = (props) => {
-    const [counter, setCounter] = useState(0);
+const ItemCount = ({stock, initial = 0, aggUnidades}) => {
+    const [counter, setCounter] = useState(initial);
 
     const incrementCounter = () =>{
-      if(counter < props.stock){
+      if(counter < stock){
         setCounter(counter +1)
-      }else if(props.stock === 0){
+      }else if(stock === 0){
 
       }
     }
@@ -16,6 +16,9 @@ const ItemCount = (props) => {
     }
     }
 
+    useEffect(() => {
+      setCounter(initial)
+    }, [initial])
   
     return (
         <div className='container cardContador'>
@@ -36,7 +39,7 @@ const ItemCount = (props) => {
               </div>
             </div>
             <div className="col-lg-6">
-              <button onClick={() => props.aggUnidades(counter)}
+              <button onClick={() => aggUnidades(counter)}
               className="btnAggCarrito">Agregar al carrito</button>
             </div>
           </div>

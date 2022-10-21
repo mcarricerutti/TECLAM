@@ -1,19 +1,19 @@
-import React, { useState } from "react";
+// import React, { useState } from "react";
 import CartWidget from "../CardWidget/CardWidget";
 import {Link, NavLink} from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Dropdown, DropdownItem, DropdownMenu, DropdownToggle } from "reactstrap";
+// import { Dropdown, DropdownItem, DropdownMenu, DropdownToggle } from "reactstrap";
 
 
 const NavBar = ({ background }) => {
 
     const brand = ("logo.png");
 
-    const [dropdown, setDropdown] = useState(false);
+    // const [dropdown, setDropdown] = useState(false);
 
-    const abrirCerrarDropdown =() => {
-        setDropdown(!dropdown);
-    }
+    // const abrirCerrarDropdown =() => {
+    //     setDropdown(!dropdown);
+    // }
     
     return (
     <header className={`header background--${background}`}>
@@ -30,8 +30,8 @@ const NavBar = ({ background }) => {
                 <div className="col-lg-6">
                     <ul>
                         <NavLink to="/home">Home</NavLink>
-                        <NavLink to="/products">
-                            <Dropdown isOpen={dropdown} toggle={abrirCerrarDropdown}>
+                        <NavLink to="/products">Productos
+                            {/* <Dropdown isOpen={dropdown} toggle={abrirCerrarDropdown}>
                                 <DropdownToggle caret>Productos</DropdownToggle>
                                     <DropdownMenu>
                                         <DropdownItem>
@@ -51,7 +51,7 @@ const NavBar = ({ background }) => {
                                         <NavLink className="nameProd" to="/products/teclas">Keycaps</NavLink>
                                         </DropdownItem>
                                     </DropdownMenu>
-                            </Dropdown>
+                            </Dropdown> */}
                         </NavLink>
                         <NavLink to="/contacto">Contacto</NavLink>
                     </ul>

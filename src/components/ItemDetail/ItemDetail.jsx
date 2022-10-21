@@ -6,13 +6,14 @@ import { Link } from "react-router-dom";
 const ItemDetail = ({ item }) => {
     const [unidades, setUnidades] = useState(0);
 
-    const {addToCart} = useContext(CartContext);
+    const {addToCart, getProductQuantity} = useContext(CartContext);
 
     const aggUnidades = (numero) =>{
-        // console.log(`Añadiste ${numero}`)
         setUnidades(numero);
         addToCart(item,numero);
     };
+
+    const quantity = getProductQuantity(item.id)
 
     return (
         <div className="container contDetail">
@@ -28,7 +29,8 @@ const ItemDetail = ({ item }) => {
 
                 {
                     unidades === 0 
-                    ? <ItemCount aggUnidades={aggUnidades} stock={item.stock}/>
+                    ? <ItemCount aggUnidades={aggUnidades} stock={item.stock}
+                    initial={quantity}/>
                     :<Link to="/cart" className="btnIrCarrito" >Ir al carrito</Link>
                 }
                 
