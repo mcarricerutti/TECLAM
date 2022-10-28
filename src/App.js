@@ -6,10 +6,10 @@ import "./style.css";
 import {BrowserRouter, Routes, Route} from "react-router-dom";
 import Cart from "./components/Cart/Cart";
 import Home from "./components/Home/Home";
-import PageNotFound from "./components/PageNotFound/PageNotFound";
 import Provider from "./context/CartContext";
 import Form from "./components/Formulario/Formu";
 import Contacto from "./components/PageContacto/Contacto";
+import Select from "./components/seleccionProd/Select";
 
 
 
@@ -26,11 +26,11 @@ function App() {
         <Route path="/home" element={< Home title="Reyes del infra🌎" />}/>
         <Route path="/products" element={<ItemListContainer/>}/>
         <Route path="/products/:prodName" element={<ItemListContainer/>}/>
+        <Route path="/select" element={<Select/>}/>
         <Route path="/item/:id" element={<ItemDetailContainer />}/>
         <Route path="/cart" element={<Cart/>}/>
-        <Route path="/form" element={<Form/>}/>
+        <Route path="/checkout" element={<Form/>}/>
         <Route path="/contacto" element={<Contacto/>}/>
-        <Route path="*" element={<PageNotFound/>} />
         
       </Routes>
 

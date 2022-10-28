@@ -9,16 +9,21 @@ import {db} from "../../services/firebaseConfig";
 
 const ItemListContainer = () => {
   const [items, setItems] = useState([]);
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
 
     const {prodName} = useParams();
 
     useEffect(() => {
 
         const collectionProd = collection(db, 'productos');
-        // const q = query(collectionProd, where('category', '==', prodName));
 
-        getDocs(collectionProd)
+        const seleccionProd = prodName
+            ? query(
+                collection(db, 'productos'),
+                where('category', '==', prodName))
+            : collectionProd;
+        
+        getDocs(seleccionProd)
            .then((res) => {
             const products = res.docs.map((prod) => {
                 return{
@@ -26,7 +31,6 @@ const ItemListContainer = () => {
                     ...prod.data(),
                 };
             });
-            console.log(products)
             setItems(products);
            })
            .catch((error) => {
@@ -53,6 +57,6 @@ const ItemListContainer = () => {
     return (
     <ItemList  items={items} /> 
     );
-  };
+  }
   
-  export default ItemListContainer;
+  export default ItemListContainer

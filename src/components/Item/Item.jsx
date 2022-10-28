@@ -1,7 +1,9 @@
 import { Link } from "react-router-dom";
 
 const Item = ({ prod }) => {
+
     return (
+        <>
         <div className="card">
             <img src={prod.image} alt={prod.title} className="imgProductos" />
             <div className="card-info">
@@ -10,6 +12,7 @@ const Item = ({ prod }) => {
                 <Link className='btnDetalle' to={`/item/${prod.id}`}>Ver Detalle</Link>
            </div>
         </div>
+        </>
     );
 };
 

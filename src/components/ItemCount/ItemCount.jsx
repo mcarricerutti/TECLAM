@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 
-const ItemCount = ({stock, initial = 0, aggUnidades}) => {
+
+const ItemCount = ({stock, initial = 1, aggUnidades}) => {
     const [counter, setCounter] = useState(initial);
 
     const incrementCounter = () =>{

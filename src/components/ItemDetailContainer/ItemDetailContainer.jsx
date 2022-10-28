@@ -17,7 +17,6 @@ const ItemDetailContainer = () => {
 
         getDoc(ref)
             .then((res) => {
-                //console.log(res);
                 setItem({
                     id: res.id,
                     ...res.data(),

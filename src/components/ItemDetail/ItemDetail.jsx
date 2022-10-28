@@ -2,6 +2,8 @@ import { useContext, useState } from "react";
 import { CartContext } from "../../context/CartContext";
 import ItemCount from "../ItemCount/ItemCount";
 import { Link } from "react-router-dom";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const ItemDetail = ({ item }) => {
     const [unidades, setUnidades] = useState(0);
@@ -11,11 +13,14 @@ const ItemDetail = ({ item }) => {
     const aggUnidades = (numero) =>{
         setUnidades(numero);
         addToCart(item,numero);
+        toast.success(numero === 1 ? `Agregaste ${numero} producto en tu carrito`:`Agregaste ${numero} productos en tu carrito`);
     };
 
     const quantity = getProductQuantity(item.id)
 
     return (
+        <>
+        <ToastContainer />
         <div className="container contDetail">
             <div className="row">
                 <div className="col-lg-5">
@@ -38,6 +43,7 @@ const ItemDetail = ({ item }) => {
                 </div>
             </div>
         </div>
+        </>
     );
 };
 

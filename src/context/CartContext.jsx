@@ -27,7 +27,6 @@ const Provider = (props) => {
                 return prodDelCart;
             }
         });
-
         setCart(carritoActualizado);
     };
 
@@ -50,6 +49,8 @@ const Provider = (props) => {
         const product = cart.find((prod) => prod.id === id)
         return product?.cantidad
     }
+
+
 
     return(
         <CartContext.Provider value={{cart, addToCart, deleteAll, deleteItem, totalPrice, totalProducts, getProductQuantity}}>

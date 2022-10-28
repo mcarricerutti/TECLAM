@@ -1,12 +1,13 @@
 import { useContext } from 'react';
 import { CartContext } from '../../context/CartContext';
-import { Link } from 'react-router-dom';
 
-const CartDetail = () => {
-    const { cart, deleteAll, deleteItem, totalPrice} = useContext(CartContext);
+const DetailCompra = () => {
+
+    const { cart, totalPrice} = useContext(CartContext);
 
     return (
-        <div className='containerGeneCarrito'>
+        <div className='contDetaCompra'>
+            <p className='titleDetailCompra'>DETALLE DE COMPRA</p>
             {cart.map((prod) => (
                 <div className='contCarrito' key={prod.id}>
                     <img src={prod.image} alt={prod.title} className="imgCarrito" />
@@ -16,14 +17,12 @@ const CartDetail = () => {
                         <h3 className='textCarrito'>Cantidad: {prod.cantidad}</h3>
                         <h3 className='textCarrito'>Subtotal: US ${prod.precio * prod.cantidad}</h3>
                     </div>
-                    <button onClick={() => deleteItem(prod.id)} className='btnEliminarProd'>🗑</button>
                 </div>
             ))}
-            <h2 className='totalCarrito'>Total: US ${totalPrice()}</h2>
-            <button className='btnEliminarTodoCarri' onClick={deleteAll}>Eliminar todo el carrito</button>
-            <Link to="/checkout" className='btnPagar'> Pagar </Link>
+            <h2 className='totalDetailCompra'>Total: US ${totalPrice()}</h2>
         </div>
     );
-};
 
-export default CartDetail;
+}
+
+export default DetailCompra;

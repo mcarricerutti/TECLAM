@@ -174,7 +174,7 @@ font-size: 18px;
   margin-left: 3%;
   width: 30%;
   background-color: rgb(214, 13, 13);
-  margin-top: 15%;
+  margin-top: 17%;
   padding: 2%;
 }
 
@@ -418,12 +418,159 @@ font-size: 18px;
 /*FORMULARIO*/
 .contFormu{
   position: absolute;
-  background-color: white;
-  margin-top: 25%;
-  margin-left: 25%;
+  margin-top: 16%;
+  margin-left: 10%;
+  width: 40%;
 }
 
-/*PAGENOTFOUND*/
-.pageNotFound{
+.titleForm{
+  text-align: center;
+  color: rgb(0, 0, 0);
+  background-color: rgba(255, 255, 255, 0.616);
+  text-decoration: underline;
+  font-size: 23px;
+  padding: 1%;
+  margin-bottom: 2%;
+}
+
+.inputsForm{
+  width: 100%;
+  padding: 3%;
+  margin-bottom: 1%;
+}
+
+.btnForm{
+  background-color: red;
+  padding: 2%;
+  border: none;
+  color: white;
+  margin-left: 75%;
+}
+
+/*DETALLE COMPRA*/
+
+.contDetaCompra{
   background-color: white;
+  position: absolute;
+  margin-top: 16%;
+  padding: 3%;
+  width: 40%;
+  margin-left: 55%;
+}
+
+.titleDetailCompra{
+  color: rgb(102, 94, 94);
+  font-size: 25px;
+  text-align: center;
+  text-decoration: underline;
+}
+
+.totalDetailCompra{
+  font-size: 25px;
+  margin-top: 4%;
+}
+
+/*CATEGORIAS*/
+.contenedorSelect{
+  position: absolute;
+  margin-top: 18%;
+  margin-left: 8%;
+}
+
+.imgSelect{
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+}
+
+.imgSelect:hover{
+  border: solid 3px rgba(43, 32, 145, 0.534);
+}
+
+/*CHECKOUT*/
+.contCheckout{
+  background-color: white;
+  width: 30%;
+  position: absolute;
+  margin-top: 18%;
+  margin-left: 35%;
+  padding: 3%;
+  border-radius: 25%;
+}
+
+.titleCheckout{
+  text-align: center;
+  text-decoration: underline;
+  margin-bottom: 10%;
+}
+
+.textCheckout{
+  font-weight: 10px;
+}
+
+.idCheckout{
+  background-color: rgba(255, 0, 0, 0.521);
+  margin-bottom: 20%;
+}
+
+.btnCheckout{
+  background-color: rgb(159, 174, 187);
+  padding: 5%;
+  font-size: 20px;
+  margin-left: 30%;
+  width: 20%;
+  color: white;
+}
+
+.btnCheckout:hover{
+  font-size: 18px;
+  color: white;
+}
+
+/*CONTACTO*/
+.contenedorContacto{
+  position: absolute;
+  margin-top: 16%;
+  margin-left: 8%;
+  color: white;
+  height: 90%;
+}
+
+.imgContacto{
+  width: 100%;
+  height: 120%;
+}
+
+.titleContacto{
+  text-align: center;
+  font-size: 25px;
+  text-decoration: underline;
+  margin-bottom: 2%;
+  margin-top: 2%;
+  background-color: white;
+  color: rgba(223, 236, 41, 0.781);
+}
+
+.textContacto{
+  font-size: 18px;
+  text-align: center;
+  color: rgb(194, 188, 188);
+}
+
+.subTitleContac{
+  text-decoration: underline;
+  margin-top: 6%;
+  font-size:20px;
+  text-align: center;
+}
+
+.infoContac{
+  color: rgb(194, 188, 188);
+  text-align: center;
+}
+
+/*FALLO*/
+
+.fallo{
+  color: red;
 }
