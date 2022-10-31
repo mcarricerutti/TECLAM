@@ -5,7 +5,7 @@ const Contacto = () => {
             <div className="row">
             <p className="titleContacto">MANTENETE EN CONTACTO</p>
                 <div className="col-lg-4">
-                    <img className="imgContacto" src="https://res.cloudinary.com/dpruqtqw2/image/upload/v1666968353/keyboards_vntc49.png" alt="imgContacto"/>
+                    
                 </div>
                 <div className="col-lg-4">
                     <p className="textContacto">- contacto@teclam.com</p>
@@ -19,7 +19,7 @@ const Contacto = () => {
                     <h4 className="infoContac">16pm-20pm</h4>
                 </div>
                 <div className="col-lg-4">
-                   <img className="imgContacto" src="https://res.cloudinary.com/dpruqtqw2/image/upload/v1666968353/keyboards_vntc49.png" alt="imgContacto"/>
+                   
                 </div>
 
             </div>
