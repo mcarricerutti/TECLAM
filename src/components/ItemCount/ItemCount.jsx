@@ -12,7 +12,7 @@ const ItemCount = ({stock, initial = 1, aggUnidades}) => {
       }
     }
     const decrementCounter = () => {
-    if(counter > 0) {
+    if(counter > 1) {
       setCounter (counter -1);
     }
     }
